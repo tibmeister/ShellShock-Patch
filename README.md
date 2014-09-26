@@ -8,3 +8,10 @@ This basically goes out to the master BASH code repository, grabs the source and
 To test and see if you have this vulnerability, from a BASH shell, simply run the following command:
 
 env x='() { :;}; echo vulnerable' bash -c 'echo ShellShock test'
+
+If you are vulnerable, you will see the word "vulnerable" on the line above "ShellShock test".  If you are good, then you will see something like:
+
+bash: warning: x: ignoring function definition attempt
+bash: error importing function definition for `x'
+
+If you see the latter, you are good to go for this nasty little bugger, before the worms start flying!
